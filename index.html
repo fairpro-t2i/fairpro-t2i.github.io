@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Aligned but Stereotypical? The Hidden Influence of System Prompts on Social Bias in LVLM-Based Text-to-Image Models.">
+  <meta name="keywords" content="FairPro">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FairPro: Aligned but Stereotypical? The Hidden Influence of System Prompts on Social Bias in LVLM-Based Text-to-Image Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/fav.png"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://sites.google.com/view/cvml-kaist">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a> -->
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://fairpro-t2i.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">FairPro: Towards One-Shot Personalization of Text-to-Image Models via Fine-tuning Text Encoder</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="nahyeonkaty.github.io">NaHyeon Park</a><sup>*,1</sup>,</span>
+            <span class="author-block">
+              <a href="https://namin-an.github.io">Namin An</a><sup>*,1</sup>,</span>
+            <span class="author-block">
+              <a href="https://kunheek.github.io">Kunhee Kim</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Soyeon Yoon</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://z1zs.github.io">Jiahao Huo</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/cvml-kaist/members">Hyunjung Shim</a><sup>1,†</sup>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block"><sup>1</sup>KAIST</span>
+            <span class="author-block"><sup>2</sup>HKUST</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">*Equal contribution, †Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="assets/fairpro.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/xx.xx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/nahyeonkaty/fairpro"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="FairPro teaser">
+  <div class="container is-max-desktop">
+    <div class="qualitative">
+        <img src="./static/images/teaser.png">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">FairPro</span> enables socially-fair image generation with automatic generation of fairness-aware system prompt!
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large vision–language model (LVLM) based text-to-image (T2I) systems have become the dominant paradigm in image generation, yet whether they amplify social biases remains insufficiently understood.
+            In this paper, we show that LVLM-based models produce markedly more socially biased images than non-LVLM-based models.
+            We introduce a 1,024 prompt benchmark spanning four levels of linguistic complexity and evaluate demographic bias across multiple attributes in a systematic manner.
+            Our analysis identifies system prompts, the predefined instructions guiding LVLMs, as a primary driver of biased behavior.
+            Through decoded intermediate representations, token-probability diagnostics, and embedding-association analyses, we reveal how system prompts encode demographic priors that propagate into image synthesis.
+            To this end, we propose FairPro, a training-free meta-prompting framework that enables LVLMs to self-audit and construct fairness-aware system prompts at test time.
+            Experiments on two LVLM-based T2I models, SANA and Qwen-Image, show that FairPro substantially reduces demographic bias while preserving text–image alignment.
+            We believe our findings provide deeper insight into the central role of system prompts in bias propagation and offer a practical, deployable approach for building more socially responsible T2I systems.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Matting. -->
+    <div class="column">
+      <h2 class="title is-3">While exhibiting higher text alignment, LVLM-based T2I models exhibit greater social bias.</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <p>
+            LVLM-based T2I models demonstrate superior text alignment capabilities compared to traditional (e.g., CLIP) T2I models, but simultaneously exhibit significantly higher levels of social bias across demographic attributes.
+          </p>
+            <img src="./static/images/lvlm_bias.png">
+        </div>
+      </div>
+
+    <div class="columns is-centered">
+
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Matting. -->
+    <div class="column">
+      <h2 class="title is-3">Fair Image Generation</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <p>
+            With the same text prompt, <i>FairPro</i> generates a variety of images with reduced social bias.
+          </p>
+            <img src="./static/images/generated_imgs.png">
+        </div>
+      </div>
+
+    <div class="columns is-centered">
+
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2025fairpro,
+  author    = {Park, NaHyeon and An, Namin and Kim, Kunhee and Yoon, Soyeon and Huo, Jiahao and Shim, Hyunjung},
+  title     = {Aligned but Stereotypical? The Hidden Influence of System Prompts on Social Bias in LVLM-Based Text-to-Image Models},
+  journal   = {arXiv preprint arXiv:xx.xx},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template is borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
